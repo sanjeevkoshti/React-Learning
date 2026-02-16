@@ -18,6 +18,7 @@ function Book(props) {
   )
 }
 
+// destucturing props in function:
 // function Book(props) {
 //   const {name, author} = props;
 //   return (
@@ -28,6 +29,7 @@ function Book(props) {
 //   )
 // }
 
+// destucturing props in function arguments:
 // function Book({name, author}) {
 //   return (
 //     <>
