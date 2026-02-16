@@ -17,4 +17,23 @@ function Book(props) {
     </>
   )
 }
+
+// function Book(props) {
+//   const {name, author} = props;
+//   return (
+//     <>
+//        <h1>{name}</h1>
+//        <p>{author}</p>
+//     </>
+//   )
+// }
+
+// function Book({name, author}) {
+//   return (
+//     <>
+//        <h1>{name}</h1>
+//        <p>{author}</p>
+//     </>
+//   )
+// }
 export default App
