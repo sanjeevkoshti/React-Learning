@@ -1,16 +1,16 @@
 import Product from "./Product";
 //individual props
 const product1 = {
-  title: "React", 
-  price: "$100"
+  title: "Mobile", 
+  price: 10000
 }
 const product2 = {
-  title: "Node", 
-  price: "$200"
+  title: "Laptop", 
+  price: 40000
 }
 const product3 = {
-  title: "Express", 
-  price: "$300"
+  title: "Tablet", 
+  price: 30000
 }
 
 const Propss = () => {
@@ -18,11 +18,12 @@ const Propss = () => {
     <>
       <Product title={product1.title} price={product1.price}/>
       <Product title={product2.title} price={product2.price}/>
+      <Product title={product3.title} price={product3.price}/>
 
-      {/* children props */}
+      {/* children props
       <Product title={product3.title} price={product3.price}>
         <p>This is a book about Express</p>
-      </Product>
+      </Product> */}
     </>
   );
 }

@@ -1,10 +1,12 @@
+import './Product.css';
+
 function Product(props) {
   return (
-    <>
+    <div className="product">
        <h1>{props.title}</h1>
-       <h3 className='author'>{props.price}</h3>
-       {props.children}
-    </>
+       <h3 className='author'>Price : {props.price}</h3>
+       {/* {props.children} */}
+    </div>
   );
 }
 
