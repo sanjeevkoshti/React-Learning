@@ -27,3 +27,6 @@ A minimal React + Vite setup with boilerplate removed for a clean starting point
    ```bash
    npm run build
    ```
+
+
+   
