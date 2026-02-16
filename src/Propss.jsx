@@ -1,26 +1,26 @@
 import Product from "./Product";
 //individual props
 const product1 = {
-  name: "React", 
+  title: "React", 
   price: "$100"
 }
 const product2 = {
-  name: "Node", 
+  title: "Node", 
   price: "$200"
 }
 const product3 = {
-  name: "Express", 
+  title: "Express", 
   price: "$300"
 }
 
 const Propss = () => {
   return (
     <>
-      <Product name={product1.name} price={product1.price}/>
-      <Product name={product2.name} price={product2.price}/>
+      <Product title={product1.title} price={product1.price}/>
+      <Product title={product2.title} price={product2.price}/>
 
       {/* children props */}
-      <Product name={product3.name} price={product3.price}>
+      <Product title={product3.title} price={product3.price}>
         <p>This is a book about Express</p>
       </Product>
     </>
