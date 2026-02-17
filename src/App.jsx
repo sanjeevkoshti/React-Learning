@@ -1,5 +1,5 @@
 import './App.css';
-import Propss from './Propss.jsx';
+import Propss from './props/Propss.jsx';
 
 
 function App() {

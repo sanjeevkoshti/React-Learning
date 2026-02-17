@@ -1,5 +1,5 @@
 import './Product.css';
-import Protitle from './Protitle';
+import Protitle from './Protitle.jsx';
 
 function Product(props) {
   return (

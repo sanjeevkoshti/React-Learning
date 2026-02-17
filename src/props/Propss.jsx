@@ -1,4 +1,4 @@
-import Product from "./Product";
+import Product from "./Product.jsx";
 import "./Propss.css";
 
 //array of objects
