@@ -8,7 +8,7 @@ export default function LikeBtn(){
     return(
         <>
         <p style={styles} onClick={togleLike}>
-            {isLiked ? <i class="fa-solid fa-heart"></i> : <i className="fa-regular fa-heart"></i>}
+            {isLiked ? <i className="fa-solid fa-heart" style={{color:"red"}}></i> : <i className="fa-regular fa-heart" style={{color:"black"}}></i>}
         </p>
         </>
     );
@@ -16,6 +16,5 @@ export default function LikeBtn(){
 let styles={
     cursor:"pointer",
     fontSize:"2rem",
-    color:"red",
     margin:"1rem"
 }
