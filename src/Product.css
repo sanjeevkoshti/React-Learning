@@ -1,12 +1,15 @@
 .product{
-    border: 1.5px solid black;
+    border: 1.5px solid gold;
     border-radius: 10px;
-    width: 12vw;
-    height: 35vh;
+    padding: 0.1rem 0.1rem 0.2rem 0.1rem;
     margin: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
+    gap: 0.4rem;
+    background-color: gold;
+    height: 35vh;
+    width: 13vw;
 }

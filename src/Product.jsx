@@ -1,10 +1,11 @@
 import './Product.css';
+import Protitle from './Protitle';
 
 function Product(props) {
   return (
     <div className="product">
-       <h1>{props.title}</h1>
-       <h3 className='author'>Price : {props.price}</h3>
+       <Protitle title={props.title} description={props.description}/>
+       <p className='price'><span className="oldPrice" style={{textDecoration: "line-through"}}>{props.oldPrice}</span>&nbsp;&nbsp;<span className="newPrice" style={{color: "green"}}>{props.newPrice}</span></p>
        {/* {props.children} */}
     </div>
   );
