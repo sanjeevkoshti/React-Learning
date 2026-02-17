@@ -4,7 +4,10 @@ function Protitle(props) {
     return (
         <div className="titleSec">
             <h2 className="title">{props.title}</h2>
-            <p className="description">{props.description}</p>
+            <ul className="description">
+                <li>{props.description1}</li>
+                <li>{props.description2}</li>
+            </ul>
         </div>
     );
 }

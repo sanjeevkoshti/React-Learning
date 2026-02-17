@@ -3,10 +3,10 @@ import "./Propss.css";
 
 //array of objects
 const products = [
-  { title: "Mobile", description: "This is a mobile", oldPrice: 15000, newPrice: 10000 },
-  { title: "Laptop", description: "This is a laptop", oldPrice: 50000, newPrice: 40000 },
-  { title: "Tablet", description: "This is a tablet", oldPrice: 40000, newPrice: 30000 },
-  { title: "Headphones", description: "This is a headphones", oldPrice: 1500, newPrice: 1000 }
+  { title: "Mobile", description1: "This is a mobile", description2: "Vivo Y56 5G", oldPrice: 15000, newPrice: 10000 },
+  { title: "Laptop", description1: "This is a laptop", description2: "Dell Latitude", oldPrice: 50000, newPrice: 40000 },
+  { title: "Tablet", description1: "This is a tablet", description2: "Samsung Tab A", oldPrice: 40000, newPrice: 30000 },
+  { title: "Headphones", description1: "This is a headphones", description2: "JBL", oldPrice: 1500, newPrice: 1000 }
 ];
 
 //display array of objects
@@ -14,7 +14,7 @@ const Propss = () => {
   return (
     <div className="productSec">
       {products.map((product, index) => (
-        <Product key={index} title={product.title} description={product.description} oldPrice={product.oldPrice} newPrice={product.newPrice}/>
+        <Product key={index} title={product.title} description1={product.description1} description2={product.description2} oldPrice={product.oldPrice} newPrice={product.newPrice}/>
       ))}
     </div>
   );
