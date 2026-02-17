@@ -1,9 +1,11 @@
-import NumCounter from "./NumCounter";
+import NumCounter from "./NumCounter.jsx";
+import LikeBtn from "./LikeBtn.jsx";
 
 export default function States() {
     return (
         <div style={styles}>
-            <NumCounter/>
+            <LikeBtn/>
+            {/* <NumCounter/> */}
         </div>
     );
 }
