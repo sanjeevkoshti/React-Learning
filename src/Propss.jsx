@@ -1,4 +1,5 @@
 import Product from "./Product";
+import "./Propss.css";
 
 //array of objects
 const products = [
@@ -10,11 +11,11 @@ const products = [
 //display array of objects
 const Propss = () => {
   return (
-    <>
+    <div className="productSec">
       {products.map((product) => (
         <Product title={product.title} price={product.price}/>
       ))}
-    </>
+    </div>
   );
 }
 
