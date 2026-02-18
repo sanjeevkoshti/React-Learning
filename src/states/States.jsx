@@ -1,10 +1,12 @@
 import NumCounter from "./NumCounter.jsx";
 import LikeBtn from "./LikeBtn.jsx";
+import LudoBoard from "./LudoBoard.jsx";
 
 export default function States() {
     return (
         <div style={styles}>
-            <LikeBtn/>
+            <LudoBoard/>
+            {/* <LikeBtn/> */}
             {/* <NumCounter/> */}
         </div>
     );
@@ -12,7 +14,6 @@ export default function States() {
 
 let styles={
     backgroundColor:"#f0f0f0",
-    padding:"20px",
     borderRadius:"10px",
     textAlign:"center",
     height:"100vh",
