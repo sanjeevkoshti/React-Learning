@@ -10,11 +10,22 @@ export default function TodoList(){
     const deleteTodo=(index)=>{
         setTodos(todos.filter((todos, idx)=>idx!=index));
     }
+    const toUpper=()=>{
+        setTodos(
+            todos.map(
+                (todo) => 
+                    todo.toUpperCase()
+            )
+        );
+    }
     return(
         <div style={styles}>
             <h1>Todo List</h1>
             <input type="text" value={newTodo} onChange={(e)=>setNewTodo(e.target.value)} placeholder="Enter Todo" style={inputStyle}/>
-            <button onClick={addTodo} style={btnStyle}>Add Todo</button>
+            <div>
+                <button onClick={addTodo} style={btnStyle}>Add Todo</button>
+                <button onClick={toUpper} style={btnStyle}>To Uppercase All</button> 
+            </div>
             <ul style={ulStyle}>
                 {todos.map((todo, index)=>(
                     <li style={liStyle} key={index}>
@@ -58,6 +69,7 @@ let ulStyle={
     marginTop:"1rem"
 }
 let btnStyle={
+    margin:"0 0.5rem",
     padding:"0.5rem 1rem", 
     fontSize:"1.2rem", 
     fontWeight:"bold", 
