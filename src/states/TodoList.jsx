@@ -13,12 +13,12 @@ export default function TodoList(){
     return(
         <div style={styles}>
             <h1>Todo List</h1>
-            <input type="text" value={newTodo} onChange={(e)=>setNewTodo(e.target.value)} placeholder="Enter Todo" style={{padding:"0.5rem 1rem", fontSize:"1.2rem", fontWeight:"bold", borderRadius:"5px", cursor:"text", margin:"1rem"}}/>
-            <button onClick={addTodo} style={{padding:"0.5rem 1rem", fontSize:"1.2rem", fontWeight:"bold", borderRadius:"5px", cursor:"pointer"}}>Add Todo</button>
-            <ul style={{padding:"0", margin:"0", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"start", backgroundColor:"#ffd2d2ff", borderRadius:"10px", padding:"1rem", marginTop:"1rem"}}>
+            <input type="text" value={newTodo} onChange={(e)=>setNewTodo(e.target.value)} placeholder="Enter Todo" style={inputStyle}/>
+            <button onClick={addTodo} style={btnStyle}>Add Todo</button>
+            <ul style={ulStyle}>
                 {todos.map((todo, index)=>(
-                    <li style={{listStyleType:"none", fontSize:"2rem", margin:"0.5rem 0 0 0", display:"flex", justifyContent:"center", alignItems:"center", gap:"1rem"}} key={index}>
-                        <button onClick={()=>deleteTodo(index)} style={{padding:"0", fontSize:"1.4rem", fontWeight:"bold", borderRadius:"50%", cursor:"pointer", border:"none", backgroundColor:"#ffd2d2ff"}}><i className="fa-solid fa-trash"></i></button>
+                    <li style={liStyle} key={index}>
+                        <button onClick={()=>deleteTodo(index)} style={deleteBtnStyle}><i className="fa-solid fa-trash"></i></button>
                         <span>{todo}</span>
                     </li>
                 ))}
@@ -27,6 +27,51 @@ export default function TodoList(){
     );
 }
 
+let deleteBtnStyle={
+    padding:"0", 
+    fontSize:"1.4rem", 
+    fontWeight:"bold", 
+    borderRadius:"50%", 
+    cursor:"pointer", 
+    border:"none", 
+    backgroundColor:"#ffd2d2ff"
+}
+let liStyle={
+    listStyleType:"none", 
+    fontSize:"2rem", 
+    margin:"0.5rem 0 0 0", 
+    display:"flex", 
+    justifyContent:"center", 
+    alignItems:"center", 
+    gap:"1rem"
+}
+let ulStyle={
+    padding:"0", 
+    margin:"0", 
+    display:"flex", 
+    flexDirection:"column", 
+    justifyContent:"center", 
+    alignItems:"start", 
+    backgroundColor:"#ffd2d2ff", 
+    borderRadius:"10px", 
+    padding:"1rem", 
+    marginTop:"1rem"
+}
+let btnStyle={
+    padding:"0.5rem 1rem", 
+    fontSize:"1.2rem", 
+    fontWeight:"bold", 
+    borderRadius:"5px", 
+    cursor:"pointer"
+}
+let inputStyle={
+    padding:"0.5rem 1rem", 
+    fontSize:"1.2rem", 
+    fontWeight:"bold", 
+    borderRadius:"5px", 
+    cursor:"text", 
+    margin:"1rem", 
+}
 let styles={
     backgroundColor:"#e2b5b5ff",
     borderRadius:"10px",
