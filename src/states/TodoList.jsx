@@ -18,6 +18,14 @@ export default function TodoList(){
             )
         );
     }
+    const toUpperOne=(index)=>{
+        setTodos(
+            todos.map(
+                (todo, idx) => 
+                    idx==index?todo.toUpperCase():todo
+            )
+        );
+    }
     return(
         <div style={styles}>
             <h1>Todo List</h1>
@@ -30,6 +38,7 @@ export default function TodoList(){
                 {todos.map((todo, index)=>(
                     <li style={liStyle} key={index}>
                         <button onClick={()=>deleteTodo(index)} style={deleteBtnStyle}><i className="fa-solid fa-trash"></i></button>
+                        <button onClick={()=>toUpperOne(index)} style={deleteBtnStyle}><i className="fa-solid fa-arrows-up-to-line"></i></button>
                         <span>{todo}</span>
                     </li>
                 ))}
