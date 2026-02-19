@@ -47,6 +47,16 @@ export default function TodoList(){
             })
         );
     }
+    let allTaskDone=()=>{
+        setTodos((todos) =>
+            todos.map((todo) => {
+                    return {
+                        ...todo,
+                        isDone: !todo.isDone
+                    }
+            })
+        );
+    }
     return(
         <div style={styles}>
             <h1>Todo List</h1>
@@ -54,6 +64,7 @@ export default function TodoList(){
             <div>
                 <button onClick={addTodo} style={btnStyle}>Add Todo</button>
                 <button onClick={toUpper} style={btnStyle}>To Uppercase All</button>
+                <button onClick={allTaskDone} style={btnStyle}>All Task Done</button>
             </div>
             <ul style={ulStyle}>
                 {todos.map((todo)=>(
