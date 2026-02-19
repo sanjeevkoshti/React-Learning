@@ -1,29 +1,50 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function TodoList(){
-    const [todos, setTodos]=useState([]);
+    const [todos, setTodos]=useState([{task:"Sample task",id:uuidv4(), isDone:false}]);
     const [newTodo, setNewTodo]=useState("");
     const addTodo=()=>{
-        setTodos([...todos, newTodo]);
+        setTodos([...todos, {task:newTodo, id:uuidv4(), isDone:false}]);
         setNewTodo("");
     }
-    const deleteTodo=(index)=>{
-        setTodos(todos.filter((todos, idx)=>idx!=index));
+    let deleteTodo=(idx)=>{
+        setTodos(todos.filter((todo)=>todo.id!=idx));
     }
-    const toUpper=()=>{
-        setTodos(
-            todos.map(
-                (todo) => 
-                    todo.toUpperCase()
-            )
+    let toUpper = () => {
+        setTodos((todos) =>
+            todos.map((todo) => {
+                return {
+                    ...todo,
+                    task: todo.task.toUpperCase()
+                }
+            })
         );
     }
-    const toUpperOne=(index)=>{
-        setTodos(
-            todos.map(
-                (todo, idx) => 
-                    idx==index?todo.toUpperCase():todo
-            )
+    let toUpperOne=(idx)=>{
+        setTodos((todos) =>
+            todos.map((todo) => {
+                if(todo.id === idx){
+                    return {
+                        ...todo,
+                        task: todo.task.toUpperCase()
+                    }
+                }
+                return todo;
+            })
+        );
+    }
+    let taskDoneTogle=(idx)=>{
+        setTodos((todos) =>
+            todos.map((todo) => {
+                if(todo.id === idx){
+                    return {
+                        ...todo,
+                        isDone: !todo.isDone
+                    }
+                }
+                return todo;
+            })
         );
     }
     return(
@@ -32,14 +53,15 @@ export default function TodoList(){
             <input type="text" value={newTodo} onChange={(e)=>setNewTodo(e.target.value)} placeholder="Enter Todo" style={inputStyle}/>
             <div>
                 <button onClick={addTodo} style={btnStyle}>Add Todo</button>
-                <button onClick={toUpper} style={btnStyle}>To Uppercase All</button> 
+                <button onClick={toUpper} style={btnStyle}>To Uppercase All</button>
             </div>
             <ul style={ulStyle}>
-                {todos.map((todo, index)=>(
-                    <li style={liStyle} key={index}>
-                        <button onClick={()=>deleteTodo(index)} style={deleteBtnStyle}><i className="fa-solid fa-trash"></i></button>
-                        <button onClick={()=>toUpperOne(index)} style={deleteBtnStyle}><i className="fa-solid fa-arrows-up-to-line"></i></button>
-                        <span>{todo}</span>
+                {todos.map((todo)=>(
+                    <li style={liStyle} key={todo.id}>
+                        <button onClick={()=>deleteTodo(todo.id)} style={deleteBtnStyle}><i className="fa-solid fa-trash"></i></button>
+                        <button onClick={()=>toUpperOne(todo.id)} style={deleteBtnStyle}><i className="fa-solid fa-arrows-up-to-line"></i></button>
+                        <button onClick={()=>taskDoneTogle(todo.id)} style={deleteBtnStyle}><i className="fa-regular fa-circle-check" style={todo.isDone?{color:"green"}:{color:"red"}}></i></button>
+                        <span style={todo.isDone?{color:"gray", textDecoration:"line-through"}:{}}>{todo.task}</span>
                     </li>
                 ))}
             </ul>
