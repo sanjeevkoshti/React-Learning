@@ -61,8 +61,8 @@ export default function TodoList(){
         <div style={styles}>
             <h1>Todo List</h1>
             <input type="text" value={newTodo} onChange={(e)=>setNewTodo(e.target.value)} placeholder="Enter Todo" style={inputStyle}/>
+            <button onClick={addTodo} style={addBtnStyle}>Add Todo</button>
             <div>
-                <button onClick={addTodo} style={btnStyle}>Add Todo</button>
                 <button onClick={toUpper} style={btnStyle}>To Uppercase All</button>
                 <button onClick={allTaskDone} style={btnStyle}>All Task Done</button>
             </div>
@@ -110,6 +110,15 @@ let ulStyle={
     padding:"1rem", 
     marginTop:"1rem"
 }
+let addBtnStyle={
+    margin:"0 0 0.5rem 0",
+    padding:"0.5rem 1rem", 
+    fontSize:"1.2rem", 
+    fontWeight:"bold", 
+    borderRadius:"5px", 
+    cursor:"pointer",
+    backgroundColor:"#95ff7aff"
+}
 let btnStyle={
     margin:"0 0.5rem",
     padding:"0.5rem 1rem", 
@@ -124,7 +133,7 @@ let inputStyle={
     fontWeight:"bold", 
     borderRadius:"5px", 
     cursor:"text", 
-    margin:"1rem", 
+    margin:"0 0 0.5rem 0", 
 }
 let styles={
     backgroundColor:"#e2b5b5ff",
