@@ -9,20 +9,6 @@
     width:45vw;
     padding:2rem;
 }
-
-.ticket{ 
-    display:flex;
-    margin: 1rem 0;
-    justify-content:center;
-    align-items:center;
-    flex-direction:row;
-    gap:1rem;
-    font-size:1.8rem;
-    font-weight:bold;
-    border: 3px solid rgb(155, 255, 237);
-    padding: 0 3rem;
-    border-radius: 50px;
-}
 .buyBtn{
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
@@ -30,5 +16,5 @@
     border-radius: 5px;
     cursor: pointer;
     background-color: rgb(122, 255, 244);
-    margin: 0 0 1rem 0;
+    margin: 1rem 0;
 }
