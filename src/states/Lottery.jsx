@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./Lottery.css";
 import Ticket from "./Ticket.jsx";
-import { genTicket, sum } from "./LotteryFun.js"
+import { genTicket } from "./LotteryFun.js"
 
-export default function Lottery({n=3, winSum=15}){
+export default function Lottery({n=3, winCondition}){
     let [ticket, setTicket] = useState(genTicket(n));
-    let isWinning = sum(ticket) === winSum;
+    let isWinning = winCondition(ticket);
     let buyTicket=()=>{
         setTicket(genTicket(n));
     }
