@@ -7,7 +7,7 @@ import Lottery from "./Lottery.jsx";
 export default function States() {
     return (
         <div style={styles}>
-            <Lottery/>
+            <Lottery n={3} winSum={15}/>
             {/* <TodoList/> */}
             {/* <LudoBoard/> */}
             {/* <LikeBtn/> */}
