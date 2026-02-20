@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Lottery.css";
 import Ticket from "./Ticket.jsx";
+import Btn from "./Btn.jsx";
 import { genTicket } from "./LotteryFun.js"
 
 export default function Lottery({n=3, winCondition}){
@@ -12,7 +13,7 @@ export default function Lottery({n=3, winCondition}){
     return(
         <div className="lottery">
             <h1>Lottery Game!</h1>
-            <button className="buyBtn" onClick={buyTicket}>Buy New Ticket</button>
+            <Btn action={buyTicket}/>
             <Ticket ticket={ticket}/>
             <h2 style={{color: "green", fontSize: "1.8rem"}}>{isWinning && "Congratulations, you won! 🎉"}</h2>
         </div>
