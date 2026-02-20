@@ -23,3 +23,12 @@
     padding: 0 3rem;
     border-radius: 50px;
 }
+.buyBtn{
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(122, 255, 244);
+    margin: 0 0 1rem 0;
+}
