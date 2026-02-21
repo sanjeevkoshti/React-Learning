@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function CommentForm() {
 
@@ -23,6 +23,9 @@ export default function CommentForm() {
         })
 
     }
+    useEffect(() => {
+        console.log("use effect is called");
+    })
     return (
         <>
             <form style={formStyle} onSubmit={handleSubmit}>
