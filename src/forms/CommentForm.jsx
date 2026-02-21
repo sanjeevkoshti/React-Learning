@@ -25,7 +25,7 @@ export default function CommentForm() {
     }
     useEffect(() => {
         console.log("use effect is called");
-    })
+    },[formData])
     return (
         <>
             <form style={formStyle} onSubmit={handleSubmit}>
