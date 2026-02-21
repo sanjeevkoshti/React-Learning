@@ -2,3 +2,11 @@
   margin: 0;
   padding: 0;
 }
+.app{
+  background-color: #312929;
+  min-height: 100vh;
+  min-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

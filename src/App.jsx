@@ -6,11 +6,11 @@ import Forms from './forms/Forms.jsx';
 
 function App() {
   return (
-    <>
+    <div className='app'>
       <Forms/>
       {/* <States/> */}
       {/* <Propss/> */}
-    </>
+    </div>
   )
 }
 export default App
