@@ -1,7 +1,16 @@
+import SearchBox from "./SearchBox";
 export default function Weather(){
     return(
-        <div>
-            <h1 style={{color: "white"}}>Weather</h1>
+        <div style={weatherStyle}>
+            <SearchBox/>
         </div>
     );
+}
+
+let weatherStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "1rem",
 }
