@@ -7,7 +7,7 @@ export default function SearchBox(){
 }
 
 let style = {
-    fontSize: "1.5rem",
+    fontSize: "1.3rem",
     padding: "0.5rem",
     borderRadius: "5px",
     border: "1px solid #ccc",
