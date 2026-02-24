@@ -1,8 +1,9 @@
-import SearchBox from "./SearchBox";
+import WeatherApp from "./WeatherApp";
+
 export default function Weather(){
     return(
         <div style={weatherStyle}>
-            <SearchBox/>
+            <WeatherApp/>
         </div>
     );
 }

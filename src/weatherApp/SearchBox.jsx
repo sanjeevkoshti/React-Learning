@@ -1,48 +1,71 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './SearchBox.css';
-import { useState } from 'react';
-
-export default function SearchBox(){
-    let [city, setCity] = useState("");
+import { useState, useEffect } from 'react';
+export default function SearchBox({ changeUpdate }) {
     const API_URL = "https://api.openweathermap.org/data/2.5/weather";
     const API_KEY = "97ed1ca6b9b07a841e3a5eb9c319fd24";
+    let [city, setCity] = useState("Athani");
+    let [error, setError] = useState(false);
+
     let getWeather = async () => {
-        let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
-        let data = await response.json();
-        console.log(data);
-        let result = {
-            city: data.name,
-            temp: data.main.temp,
-            tempMin: data.main.temp_min,
-            tempMax: data.main.temp_max,
-            humidity: data.main.humidity,
-            feelsLike: data.main.feels_like,
-            weather: data.weather[0].description,
+        try {
+            let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
+            if (!response.ok) {
+                throw new Error("City not found");
+            }
+            let data = await response.json();
+            let result = {
+                name: data.name,
+                temp: data.main.temp,
+                tempMin: data.main.temp_min,
+                tempMax: data.main.temp_max,
+                humidity: data.main.humidity,
+                feelsLike: data.main.feels_like,
+                weather: data.weather[0].description,
+            };
+            setError(false);
+            return result;
+        } catch (err) {
+            setError(true);
+            return null;
+        }
+    }
+
+    useEffect(() => {
+        const fetchInitialWeather = async () => {
+            let info = await getWeather();
+            if (info) {
+                changeUpdate(info);
+                setCity("");
+            }
         };
-        console.log(result);
-    }
-    const onSubmit = (e) => {
+        fetchInitialWeather();
+    }, []);
+
+    const onSubmit = async (e) => {
         e.preventDefault();
-        console.log(city);
-        getWeather();
-        setCity("");
+        let info = await getWeather();
+        if (info) {
+            changeUpdate(info);
+            setCity("");
+        }
     }
-    return(
+    return (
         <div className='searchBox'>
-            <h3>Search for the weather</h3>
             <form className='form' onSubmit={onSubmit}>
-                <TextField 
-                id="city" 
-                label="Search City" 
-                variant="outlined" 
-                required
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
+                <TextField
+                    id="city"
+                    label="Search City"
+                    variant="outlined"
+                    required
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
                 />
                 <Button variant="contained" type="submit">
                     Search
                 </Button>
+                {error && <p style={{ color: "red" }}>No such place exists!</p>}
             </form>
         </div>
     );
