@@ -8,8 +8,8 @@ import Tailwind from './tailwind/Tailwind.jsx';
 function App() {
   return (
     <div className='app'>
-      <Tailwind/>
-      {/* <Weather/> */}
+      <Weather/>
+      {/* <Tailwind/> */}
       {/* <Forms/> */}
       {/* <States/> */}
       {/* <Propss/> */}
